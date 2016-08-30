@@ -1,0 +1,5 @@
+rootProject.name = 'livescore-administration'
+include 'api'
+findProject(':api')?.name = 'livescore-administration-api'
+include 'client'
+findProject(':client')?.name = 'livescore-administration-api-client'
