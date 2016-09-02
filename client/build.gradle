@@ -1,4 +1,6 @@
 dependencies {
   compile project(':livescore-administration-api')
-  testCompile group: 'junit', name: 'junit', version: '4.11'
+  compile group: 'ro.szzsa.utils', name: 'connector', version: connectorVersion
+  compile group: 'com.google.code.gson', name: 'gson', version: gsonVersion
+  testCompile group: 'junit', name: 'junit', version: junitVersion
 }
