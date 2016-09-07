@@ -9,7 +9,7 @@ public final class AdministrationApiClients {
     throw new UnsupportedOperationException();
   }
 
-  public static AdministrationApiClient createHttpClient(String serverUrl) {
-    return new AdministrationApiHttpClient(serverUrl);
+  public static AdministrationApiClient createHttpClient(String serverUrl, String username, String password) {
+    return new AdministrationApiHttpClient(serverUrl, username, password);
   }
 }
