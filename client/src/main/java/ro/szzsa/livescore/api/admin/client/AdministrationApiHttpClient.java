@@ -26,7 +26,13 @@ public class AdministrationApiHttpClient implements AdministrationApiClient {
 
   public AdministrationApiHttpClient(String serverUrl, String username, String password) {
     this.serverUrl = serverUrl;
-    connector = Connectors.customHttpConnector().setUsername(username).setPassword(password).build();
+    connector = Connectors.withCredentials(username, password).build();
+    converter = Converters.createJsonConverter();
+  }
+
+  public AdministrationApiHttpClient(String serverUrl, Connector connector) {
+    this.serverUrl = serverUrl;
+    this.connector = connector;
     converter = Converters.createJsonConverter();
   }
 
