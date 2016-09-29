@@ -1,6 +1,5 @@
 package ro.szzsa.livescore.api.admin.client;
 
-import ro.szzsa.utils.connector.Connectors;
 import ro.szzsa.utils.connector.HttpConnectorBuilder;
 import ro.szzsa.utils.connector.log.Logger;
 
@@ -15,7 +14,7 @@ public final class AdministrationApiHttpClientBuilder {
 
   public AdministrationApiHttpClientBuilder(String serverUrl, String username, String password) {
     this.serverUrl = serverUrl;
-    connectorBuilder = Connectors.withCredentials(username, password);
+    connectorBuilder = new HttpConnectorBuilder(username, password);
   }
 
   public AdministrationApiHttpClientBuilder setSocketTimeout(int socketTimeout) {
